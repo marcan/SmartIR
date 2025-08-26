@@ -33,6 +33,7 @@ COMPONENT_ABS_DIR = os.path.dirname(
 
 CONF_CHECK_UPDATES = 'check_updates'
 CONF_UPDATE_BRANCH = 'update_branch'
+CONF_DEVICE_CODE = 'device_code'
 
 CONFIG_SCHEMA = vol.Schema({
     DOMAIN: vol.Schema({
@@ -41,6 +42,48 @@ CONFIG_SCHEMA = vol.Schema({
             ['master', 'rc'])
     })
 }, extra=vol.ALLOW_EXTRA)
+
+async def async_get_device_data(platform, config):
+    """Set up an IR platform."""
+    _LOGGER.debug(f"Setting up the smartir {platform} platform")
+    device_code = config.get(CONF_DEVICE_CODE)
+    device_files_subdir = os.path.join('codes', platform)
+    device_files_absdir = os.path.join(COMPONENT_ABS_DIR, device_files_subdir)
+
+    if not os.path.isdir(device_files_absdir):
+        os.makedirs(device_files_absdir)
+
+    device_json_filename = str(device_code) + '.json'
+    device_json_path = os.path.join(device_files_absdir, device_json_filename)
+
+    if not os.path.exists(device_json_path):
+        _LOGGER.warning("Couldn't find the device Json file. The component will " \
+                        "try to download it from the GitHub repo.")
+
+        try:
+            codes_source = ("https://raw.githubusercontent.com/"
+                            "smartHomeHub/SmartIR/master/"
+                            f"codes/{platform}/{device_code}.json")
+
+            await Helper.downloader(codes_source, device_json_path)
+        except Exception:
+            _LOGGER.error("There was an error while downloading the device Json file. " \
+                          "Please check your internet connection or if the device code " \
+                          "exists on GitHub. If the problem still exists please " \
+                          "place the file manually in the proper directory.")
+            return None
+
+    try:
+        async with aiofiles.open(device_json_path, mode='r') as j:
+            _LOGGER.debug(f"loading json file {device_json_path}")
+            content = await j.read()
+            device_data = json.loads(content)
+            _LOGGER.debug(f"{device_json_path} file loaded")
+    except Exception:
+        _LOGGER.error("The device JSON file is invalid")
+        return None
+
+    return device_data
 
 async def async_setup(hass, config):
     """Set up the SmartIR component."""

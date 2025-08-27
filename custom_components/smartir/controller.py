@@ -4,6 +4,7 @@ import binascii
 import requests
 import logging
 import json
+import circa
 
 from homeassistant.const import ATTR_ENTITY_ID
 from . import Helper
@@ -21,13 +22,14 @@ ENC_HEX = 'Hex'
 ENC_PRONTO = 'Pronto'
 ENC_RAW = 'Raw'
 ENC_XIAOMI = 'Xiaomi'
+ENC_GENERIC = 'Generic'
 
-BROADLINK_COMMANDS_ENCODING = [ENC_BASE64, ENC_HEX, ENC_PRONTO]
-XIAOMI_COMMANDS_ENCODING = [ENC_PRONTO, ENC_XIAOMI]
-MQTT_COMMANDS_ENCODING = [ENC_RAW]
-LOOKIN_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
-ESPHOME_COMMANDS_ENCODING = [ENC_RAW]
-
+CIRCA_ENCODING_MAP = {
+    ENC_BASE64: "broadlink",
+    ENC_HEX: "broadlink-hex",
+    ENC_PRONTO: "pronto",
+    ENC_RAW: "rawpm",
+}
 
 def get_controller(hass, controller, encoding, controller_data, delay):
     """Return a controller compatible with the specification provided."""
@@ -47,34 +49,51 @@ def get_controller(hass, controller, encoding, controller_data, delay):
 class AbstractController(ABC):
     """Representation of a controller."""
     def __init__(self, hass, controller, encoding, controller_data, delay):
-        self.check_encoding(encoding)
         self.hass = hass
         self._controller = controller
-        self._encoding = encoding
+        self._input_encoding = encoding
+        if encoding in self.ENCODINGS:
+            self._encoding = encoding
+        else:
+            self._encoding = self.ENCODINGS[0]
+        if self._input_encoding in CIRCA_ENCODING_MAP:
+            self._circa_input_type = circa.find_format(CIRCA_ENCODING_MAP[self._input_encoding])
+        else:
+            self._circa_input_type = None
+            if self._encoding != self._input_encoding and self._input_encoding != ENC_GENERIC:
+                raise Exception(f"Conversion from {self._input_encoding} encoding not supported")
+
+        self._circa_type = circa.find_format(CIRCA_ENCODING_MAP[self._encoding])
         self._controller_data = controller_data
         self._delay = delay
 
-    @abstractmethod
-    def check_encoding(self, encoding):
-        """Check if the encoding is supported by the controller."""
-        pass
+    async def send(self, command):
+        """Send a command to the controller."""
+        _LOGGER.debug(f"Original command: {command!r}")
+
+        if isinstance(command, circa.IRCode):
+            _, _, command = self._circa_type.from_code(command).to_string_parts()
+        elif self._input_encoding == ENC_GENERIC:
+            _, _, command = self._circa_type.from_code(circa.from_generic(command)).to_string_parts()
+        elif self._input_encoding != self._encoding or self._encoding == ENC_RAW: # Always normalize raw codes
+            code = self._circa_input_type.from_string(CIRCA_ENCODING_MAP[self._input_encoding], command)
+            _, _, command = self._circa_type.from_code(code).to_string_parts()
+
+        _LOGGER.debug(f"--> Converted command: {command!r}")
+
+        return await self._send(command)
 
     @abstractmethod
-    async def send(self, command):
-        """Send a command."""
+    async def _send(self, command):
+        """Send a formatted command to the controller."""
         pass
 
 
 class BroadlinkController(AbstractController):
     """Controls a Broadlink device."""
+    ENCODINGS = [ENC_BASE64]
 
-    def check_encoding(self, encoding):
-        """Check if the encoding is supported by the controller."""
-        if encoding not in BROADLINK_COMMANDS_ENCODING:
-            raise Exception("The encoding is not supported "
-                            "by the Broadlink controller.")
-
-    async def send(self, command):
+    async def _send(self, command):
         """Send a command."""
         commands = []
 
@@ -82,25 +101,6 @@ class BroadlinkController(AbstractController):
             command = [command]
 
         for _command in command:
-            if self._encoding == ENC_HEX:
-                try:
-                    _command = binascii.unhexlify(_command)
-                    _command = b64encode(_command).decode('utf-8')
-                except:
-                    raise Exception("Error while converting "
-                                    "Hex to Base64 encoding")
-
-            if self._encoding == ENC_PRONTO:
-                try:
-                    _command = _command.replace(' ', '')
-                    _command = bytearray.fromhex(_command)
-                    _command = Helper.pronto2lirc(_command)
-                    _command = Helper.lirc2broadlink(_command)
-                    _command = b64encode(_command).decode('utf-8')
-                except:
-                    raise Exception("Error while converting "
-                                    "Pronto to Base64 encoding")
-
             commands.append('b64:' + _command)
 
         service_data = {
@@ -115,14 +115,9 @@ class BroadlinkController(AbstractController):
 
 class XiaomiController(AbstractController):
     """Controls a Xiaomi device."""
+    ENCODINGS = [ENC_PRONTO, ENC_XIAOMI]
 
-    def check_encoding(self, encoding):
-        """Check if the encoding is supported by the controller."""
-        if encoding not in XIAOMI_COMMANDS_ENCODING:
-            raise Exception("The encoding is not supported "
-                            "by the Xiaomi controller.")
-
-    async def send(self, command):
+    async def _send(self, command):
         """Send a command."""
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
@@ -135,14 +130,9 @@ class XiaomiController(AbstractController):
 
 class MQTTController(AbstractController):
     """Controls a MQTT device."""
+    ENCODINGS = [ENC_RAW]
 
-    def check_encoding(self, encoding):
-        """Check if the encoding is supported by the controller."""
-        if encoding not in MQTT_COMMANDS_ENCODING:
-            raise Exception("The encoding is not supported "
-                            "by the mqtt controller.")
-
-    async def send(self, command):
+    async def _send(self, command):
         """Send a command."""
         service_data = {
             'topic': self._controller_data,
@@ -155,33 +145,23 @@ class MQTTController(AbstractController):
 
 class LookinController(AbstractController):
     """Controls a Lookin device."""
+    ENCODINGS = [ENC_PRONTO, ENC_RAW]
 
-    def check_encoding(self, encoding):
-        """Check if the encoding is supported by the controller."""
-        if encoding not in LOOKIN_COMMANDS_ENCODING:
-            raise Exception("The encoding is not supported "
-                            "by the LOOKin controller.")
-
-    async def send(self, command):
+    async def _send(self, command):
         """Send a command."""
         encoding = self._encoding.lower().replace('pronto', 'prontohex')
         url = f"http://{self._controller_data}/commands/ir/" \
-                f"{encoding}/{command}"
+                f"{encoding}/{command.replace(",", " ")}"
         await self.hass.async_add_executor_job(requests.get, url)
 
 
 class ESPHomeController(AbstractController):
     """Controls a ESPHome device."""
+    ENCODINGS = [ENC_RAW]
 
-    def check_encoding(self, encoding):
-        """Check if the encoding is supported by the controller."""
-        if encoding not in ESPHOME_COMMANDS_ENCODING:
-            raise Exception("The encoding is not supported "
-                            "by the ESPHome controller.")
-    
-    async def send(self, command):
+    async def _send(self, command):
         """Send a command."""
-        service_data = {'command':  json.loads(command)}
+        service_data = {'command': json.loads(f"[{command}]")}
 
         await self.hass.services.async_call(
             'esphome', self._controller_data, service_data)

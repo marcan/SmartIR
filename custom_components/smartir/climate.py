@@ -92,7 +92,8 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self._operation_modes = [HVACMode.OFF] + valid_hvac_modes
         self._fan_modes = device_data['fanModes']
         self._swing_modes = device_data.get('swingModes')
-        self._commands = device_data['commands']
+        self._commands = device_data.get('commands')
+        self._code_module = device_data.get('_code_module')
 
         self._target_temperature = self._min_temperature
         self._hvac_mode = HVACMode.OFF
@@ -335,22 +336,27 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                 operation_mode = self._hvac_mode
                 fan_mode = self._current_fan_mode
                 swing_mode = self._current_swing_mode
-                target_temperature = '{0:g}'.format(self._target_temperature)
+                target_temperature = self._target_temperature
 
-                if operation_mode.lower() == HVACMode.OFF:
-                    await self._controller.send(self._commands['off'])
-                    return
-
-                if 'on' in self._commands:
-                    await self._controller.send(self._commands['on'])
-                    await asyncio.sleep(self._delay)
-
-                if self._support_swing == True:
-                    await self._controller.send(
-                        self._commands[operation_mode][fan_mode][swing_mode][target_temperature])
+                if self._code_module:
+                    code = self._code_module.command(operation_mode, swing_mode, fan_mode, target_temperature)
+                    await self._controller.send(code)
                 else:
-                    await self._controller.send(
-                        self._commands[operation_mode][fan_mode][target_temperature])
+                    target_temperature = '{0:g}'.format(target_temperature)
+                    if operation_mode.lower() == HVACMode.OFF:
+                        await self._controller.send(self._commands['off'])
+                        return
+
+                    if 'on' in self._commands:
+                        await self._controller.send(self._commands['on'])
+                        await asyncio.sleep(self._delay)
+
+                    if self._support_swing == True:
+                        await self._controller.send(
+                            self._commands[operation_mode][fan_mode][swing_mode][target_temperature])
+                    else:
+                        await self._controller.send(
+                            self._commands[operation_mode][fan_mode][target_temperature])
 
             except Exception as e:
                 _LOGGER.exception(e)

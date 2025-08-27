@@ -8,6 +8,7 @@ import logging
 import os.path
 import requests
 import struct
+import types
 import voluptuous as vol
 
 from aiohttp import ClientSession
@@ -53,19 +54,26 @@ async def async_get_device_data(platform, config):
     if not os.path.isdir(device_files_absdir):
         os.makedirs(device_files_absdir)
 
-    device_json_filename = str(device_code) + '.json'
-    device_json_path = os.path.join(device_files_absdir, device_json_filename)
+    if len(str(device_code)) > 4:
+        device_filename = str(device_code) + '.py'
+        is_python = True
+    else:
+        device_filename = str(device_code) + '.json'
+        is_python = False
 
-    if not os.path.exists(device_json_path):
+    device_path = os.path.join(device_files_absdir, device_filename)
+
+    if not os.path.exists(device_path):
+        _LOGGER.warning(device_path)
         _LOGGER.warning("Couldn't find the device Json file. The component will " \
                         "try to download it from the GitHub repo.")
 
         try:
             codes_source = ("https://raw.githubusercontent.com/"
                             "smartHomeHub/SmartIR/master/"
-                            f"codes/{platform}/{device_code}.json")
+                            f"codes/{platform}/{device_filename}")
 
-            await Helper.downloader(codes_source, device_json_path)
+            await Helper.downloader(codes_source, device_path)
         except Exception:
             _LOGGER.error("There was an error while downloading the device Json file. " \
                           "Please check your internet connection or if the device code " \
@@ -74,13 +82,19 @@ async def async_get_device_data(platform, config):
             return None
 
     try:
-        async with aiofiles.open(device_json_path, mode='r') as j:
-            _LOGGER.debug(f"loading json file {device_json_path}")
+        async with aiofiles.open(device_path, mode='r') as j:
+            _LOGGER.debug(f"loading device file {device_path}")
             content = await j.read()
-            device_data = json.loads(content)
-            _LOGGER.debug(f"{device_json_path} file loaded")
-    except Exception:
-        _LOGGER.error("The device JSON file is invalid")
+            if is_python:
+                module = types.ModuleType('code_file', 'IR code file module')
+                exec(compile(content, device_path, 'exec'), module.__dict__)
+                device_data = module.DEVICE_DATA
+                device_data["_code_module"] = module
+            else:
+                device_data = json.loads(content)
+            _LOGGER.debug(f"{device_path} file loaded")
+    except Exception as e:
+        _LOGGER.exception("The device code file is invalid")
         return None
 
     return device_data

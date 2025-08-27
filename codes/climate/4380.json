@@ -4,7 +4,7 @@
     "MCD-24HRN1-Q1"
   ],
   "supportedController": "Xiaomi",
-  "commandsEncoding": "Raw",
+  "commandsEncoding": "Xiaomi",
   "minTemperature": 17.0,
   "maxTemperature": 30.0,
   "precision": 1.0,

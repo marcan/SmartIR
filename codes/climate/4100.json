@@ -7,7 +7,7 @@
     "FVXS25BVMB"
   ],
   "supportedController": "Xiaomi",
-  "commandsEncoding": "Raw",
+  "commandsEncoding": "Xiaomi",
   "minTemperature": 18.0,
   "maxTemperature": 30.0,
   "precision": 1.0,

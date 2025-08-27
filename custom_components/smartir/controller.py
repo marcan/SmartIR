@@ -20,9 +20,10 @@ ENC_BASE64 = 'Base64'
 ENC_HEX = 'Hex'
 ENC_PRONTO = 'Pronto'
 ENC_RAW = 'Raw'
+ENC_XIAOMI = 'Xiaomi'
 
 BROADLINK_COMMANDS_ENCODING = [ENC_BASE64, ENC_HEX, ENC_PRONTO]
-XIAOMI_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
+XIAOMI_COMMANDS_ENCODING = [ENC_PRONTO, ENC_XIAOMI]
 MQTT_COMMANDS_ENCODING = [ENC_RAW]
 LOOKIN_COMMANDS_ENCODING = [ENC_PRONTO, ENC_RAW]
 ESPHOME_COMMANDS_ENCODING = [ENC_RAW]
@@ -125,7 +126,7 @@ class XiaomiController(AbstractController):
         """Send a command."""
         service_data = {
             ATTR_ENTITY_ID: self._controller_data,
-            'command':  self._encoding.lower() + ':' + command
+            'command':  self._encoding.lower().replace("xiaomi", "raw") + ':' + command
         }
 
         await self.hass.services.async_call(

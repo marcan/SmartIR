@@ -4,7 +4,7 @@
         "TX-SR508",
         "TX-SR700"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBQAAABJpMSEhI3EhISEhI3EhISNxI3EhISEhI3EjcSEhI3EjcSEhI3EjcSNxISEhISEhI3EhISEhISEhISNxI3EjcSEhI3EgAFFQABJkkSAAw/AAAAAAAAAAA=",

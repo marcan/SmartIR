@@ -1,7 +1,7 @@
 {
     "manufacturer": "Epson",
     "supportedModels": ["MG-850HD"],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgCQAAABJpITNhM2FBEUERQRFBEUERQ1FDUUERQ1FBEUNRQRFDUUERQRFBEUERQRFDUUERQRFDYTNhM2EzYUNRQRFDUUNRQRFAAFOQABJ5IUNRQ1FBEUERQRFBEUERQ1FDUUERQ1FBEUNRQRFDYTEhMSExITEhMSEzYTEhMSEzYUNRQ1FDUUNRQRFDUUNRQRFAANBQ==",

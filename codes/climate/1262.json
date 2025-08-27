@@ -7,7 +7,7 @@
       "RAC-PD1414CWRU"
    ],
    "commandsEncoding":"Base64",
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "minTemperature":62,
    "maxTemperature":86,
    "precision":1,

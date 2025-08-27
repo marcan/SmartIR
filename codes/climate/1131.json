@@ -3,7 +3,7 @@
   "supportedModels": [
     "PAR-FL32MA"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 19.0,
   "maxTemperature": 30.0,

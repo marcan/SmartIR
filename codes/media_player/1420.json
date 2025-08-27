@@ -1,7 +1,7 @@
 {
   "manufacturer": "JBL",
   "supportedModels": ["Cinema SB160"],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
     "off": "JgBQAAABJpIWDxU2ExEUEhMSFBETEhMSFDUUEhU0FTUTNhQ1FRAUNhM3FDYSExMSFTQTEhM3ExEUERQSFjMVNBQSFDUUERUzFQAFOwABKUgUAA0F",

@@ -7,7 +7,7 @@
       "Fisher FTL320H",
       "Recco RLCD32H10"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgA0ABofGh43HxoeGx8aHhsfGh4bOxoeOB4aAAtXGx8aHjcfGh4bHxoeGx8aHhs7Gh45HRoADQU=",

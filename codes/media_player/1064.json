@@ -3,7 +3,7 @@
     "supportedModels": [
         "QE49Q7FAM"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBGAJGTFDYUNhQ2FBEUERMSFBEUERM3EzcUNhMSExIUERQRFBEUERQ2FDYUERMSFDYUNhQ2FDYUERQREzcUNhQRFBEUERQADQU=",

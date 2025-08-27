@@ -3,7 +3,7 @@
     "supportedModels": [
       "UN55JU7500"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBGAJGVEjgRORE4EhMSExITExMSExI3EjgSOBEUERQRFBITERQSExITEhMSOBI3EhQRFBE4EjgSOBE5ERQSExE4EjgRFBMADQU=", 

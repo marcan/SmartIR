@@ -7,7 +7,7 @@
     "RAS-16NKV-A / RAS-16NAV-A",
     "RAS-M10SKV-E"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17.0,
   "maxTemperature": 30.0,

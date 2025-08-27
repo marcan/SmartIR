@@ -3,7 +3,7 @@
     "supportedModels":[
         "HD27"
     ],
-    "supportedController":"Broadlink",
+    "defaultController":"Broadlink",
     "commandsEncoding":"Base64",
     "commands":{
         "off":"JgBoAAABJZUSExI4EhMSExI4EjgSExIUETkRFBE5EjgSExITEjgSOREUETkRORI4EhMSOBITEhMSOBIUERQRFBE5ERQSOBI4EgAFBgABJ0sRAAxFAAEmSxIADEQAASdLEQAMRQABJksSAA0F=",

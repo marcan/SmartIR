@@ -3,7 +3,7 @@
   "supportedModels": [
     "Z906"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
     "off": "JgBYAAABJJAUERU0FRAVDxQRFBEVDxUQFBEUERQQFRAUERQ1FBEUNRQRFBAVEBQRFBEUEBUQFDUVNBU1FDUUNRQ1FDUUNRUQFAAF2wABKEgUAAxNAAEqRRYADQU=",

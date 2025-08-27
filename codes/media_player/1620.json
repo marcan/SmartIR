@@ -36,7 +36,7 @@
       "LC-46LU705E",
       "LC-46LU705S"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBmAAs5CxgKGAoZChgKGQk7CjsJGQo7CRkKGQkZCjsJGQoABeELOQsYChgKGQoYCjsKGAoZCTsKGQk7CjsJOwoZCTsKAAWcCjoLGAoYChkJGQoZCTsKOwkZCjsJGQoZCRkKOwkZCgANBQ==",

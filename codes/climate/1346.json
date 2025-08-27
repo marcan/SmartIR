@@ -4,7 +4,7 @@
     "TAC 297H V3.2"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 16,
   "maxTemperature": 32,
   "precision": 1,

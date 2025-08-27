@@ -4,7 +4,7 @@
     "FDUM VF2"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 18,
   "maxTemperature": 30,
   "precision": 1,

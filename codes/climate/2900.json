@@ -5,7 +5,7 @@
                 "MST183E20ACAA",
                 "RG57E1/BGEU1 (remote)"
         ],
-        "supportedController": "Broadlink",
+        "defaultController": "Broadlink",
         "commandsEncoding": "Base64",
         "minTemperature": 17,
         "maxTemperature": 30,

@@ -3,7 +3,7 @@
     "supportedModels": [
         "KF-26GW/Y4PF5-A5"
     ],
-    "supportedController": "ESPHome",
+    "defaultController": "ESPHome",
     "commandsEncoding": "Raw",
     "minTemperature": 16,
     "maxTemperature": 31,

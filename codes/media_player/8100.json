@@ -1,7 +1,7 @@
 {
     "manufacturer": "Cambridge Audio",
     "supportedModels": ["AXR100"],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
       "off": "JgBYAAABIpQSExITEhMSExITEhMSOBI4EjgSOBI4EjcTNxM4ExETEhMTEjcTNxMSExITEhMTEhMSNxUQExMSNxM3EzcTNxM3EwAFEgABJ0oTAAxKAAElShQADQU=",

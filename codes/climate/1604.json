@@ -1,7 +1,7 @@
 {
   "manufacturer": "Beko",
   "supportedModels": ["BPEU 120"],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17.0,
   "maxTemperature": 30.0,

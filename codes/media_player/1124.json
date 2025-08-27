@@ -3,7 +3,7 @@
   "supportedModels": [
     "YAS-109"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
       "on": "JgBQAAABJ5UUERITEhQROBI4EjcSOBITEjgROBI4EhMSExITEhQROBITEhQROBI4EhMSExI4EjcSOBI4ERQSExI4ETgSExIUEQAFJgABJ0oSAA0FAAAAAAAAAAA=",

@@ -3,7 +3,7 @@
   "supportedModels": [
     "SAGA-A-22(CH)"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16,
   "maxTemperature": 32,

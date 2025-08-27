@@ -3,7 +3,7 @@
   "supportedModels":[
     "42C3530D"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "off":"JgBQAAABKJQRFBEUERQRExEUERQSOBEUETkSOBE4EjgRORI4ERQROREUEjgRFBAUETkRFBEUERQROREUEjcSOBITETkRORE5EQAFIgABJkwRAA0FAAAAAAAAAAA=",

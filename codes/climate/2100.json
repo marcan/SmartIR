@@ -3,7 +3,7 @@
    "supportedModels":[
       "Magnum Inverter 19"
    ],
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "commandsEncoding":"Base64",
    "minTemperature":17,
    "maxTemperature":30,

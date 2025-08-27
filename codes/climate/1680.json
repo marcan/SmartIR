@@ -4,7 +4,7 @@
     "SRK25ZJ-S1",
     "SRK13CRV-S1"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 18.0,
   "maxTemperature": 30.0,

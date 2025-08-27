@@ -6,7 +6,7 @@
       "RAS-B13J2KVSG-E",
       "RAS-B10SKVP-E"
    ],
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "commandsEncoding":"Base64",
    "minTemperature":17.0,
    "maxTemperature":30.0,

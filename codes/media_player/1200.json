@@ -4,7 +4,7 @@
       "TDS850NNZ",
       "TDC850NF"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBMAA0JBQkFFAUJBRkFFAUJBQkFCQUJBRQFDwUUBQkFCQUZBQkFAAuWDQkFCQUUBQkFGQUUBQkFCQUJBQkFFAUPBRQFCQUJBRkFCQUAC3UNBQAAAAAAAAAAAAA=",

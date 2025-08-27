@@ -3,7 +3,7 @@
   "supportedModels":[
     "Vitoclima 300-S"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "minTemperature":16,
   "maxTemperature":30,

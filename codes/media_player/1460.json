@@ -3,7 +3,7 @@
   "supportedModels": [
     "R1280DB"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
     "off": "JgBQAAABMJUSExMSExMSExM4EhMTExITEzgSOBM4EhMTEhM4EzgSOBM4EhMTEhMTEhMTExITExITExM4EjgTOBI4EzgSOBM4EwAFOwABMEoSAA0F",

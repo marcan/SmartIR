@@ -3,7 +3,7 @@
   "supportedModels": [
     "CP12G10B"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 60,
   "maxTemperature": 86,

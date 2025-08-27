@@ -3,7 +3,7 @@
     "supportedModels": [
       "32LC2R"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgCIAAABIJESExAUETgUERAUERMRExEUETgSOBETETgRORE4EjgTNhITEBQRExE5ERMRExETERQROBQ2ETgSEhE5EzYUNhM2EQAFNAABJkoTAAxWAAElShEADFoAASRIEQAMWAABJUoSAAxXAAEnSBEADFgAASVKEAAMWQABJEoSAAxXAAElShIADQU=",

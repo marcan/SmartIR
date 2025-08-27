@@ -3,7 +3,7 @@
   "supportedModels":[
     "AKIRA GAN/GAG-A128 VL"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "minTemperature":16,
   "maxTemperature":30,

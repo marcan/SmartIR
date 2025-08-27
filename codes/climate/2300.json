@@ -4,7 +4,7 @@
     "ZH/TT-02"
   ],
   "commandsEncoding":"Base64",
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "minTemperature":16,
   "maxTemperature":30,
   "precision":1,

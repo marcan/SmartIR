@@ -4,7 +4,7 @@
       "PAC AN140HPEW"
    ],
    "commandsEncoding":"Base64",
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "minTemperature":13,
    "maxTemperature":32,
    "precision":1,

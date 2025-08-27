@@ -3,7 +3,7 @@
   "supportedModels": [
     "Split Type Wall Air Conditioner"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17.0,
   "maxTemperature": 30.0,

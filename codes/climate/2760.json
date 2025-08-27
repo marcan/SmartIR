@@ -3,7 +3,7 @@
   "supportedModels": [
     "AC-5400"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 18.0,
   "maxTemperature": 24.0,

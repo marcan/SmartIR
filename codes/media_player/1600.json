@@ -3,7 +3,7 @@
   "supportedModels": [
     "40F600GU"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
       "on": "JgBQAAABJJMTEhITEhMSExITEjYTEhM2EzYTNhM2EzYTNhMSEjcSExETEhMTNhM2EzYTEhITEhMSNhM2ExITEhMSEzYTNhM2EwAFEQABJEoTAA0FAAAAAAAAAAA=",

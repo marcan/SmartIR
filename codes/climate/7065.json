@@ -6,7 +6,7 @@
 		"LG150EC",
 		"LG200EC"
     ],
-    "supportedController": "ESPHome",
+    "defaultController": "ESPHome",
     "commandsEncoding": "Raw",
     "minTemperature": 16.0,
     "maxTemperature": 30.0,

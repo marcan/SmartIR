@@ -3,7 +3,7 @@
   "supportedModels": [
     "KSV25HRG"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17,
   "maxTemperature": 30,

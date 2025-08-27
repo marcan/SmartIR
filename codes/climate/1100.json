@@ -6,7 +6,7 @@
         "FTXS60BVMB",
         "FVXS25BVMB"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "minTemperature": 18,
     "maxTemperature": 30,

@@ -1,7 +1,7 @@
 {
   "manufacturer": "Agratto",
   "supportedModels": ["ECST12FR4-02", "ECST19QFIR4-02"],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16.0,
   "maxTemperature": 31.0,

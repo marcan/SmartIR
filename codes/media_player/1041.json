@@ -3,7 +3,7 @@
     "supportedModels": [
       "LH6235D"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgCmAJGRFBEUEBQ2EzYUERQ2ExEUERQQFBEUNhQ1FBETNhQRFBAUEhM2FDUUNhQ1FBETEhQQFDUUEhMRFBEUEBQ2FDUUNhMABf+VkRQ2FAAMTpWRFDYUAAxQlJAUNRQADFGTkRQ1FAAMT5WRFDUUAAxPlJITNhQADE+UkRQ2FAAMTpWRFDYTAAxPlZEUNRQADE+VkRQ1FAAMT5SSEzYUAAxQk5EUNhQADQU=",

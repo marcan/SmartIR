@@ -3,7 +3,7 @@
     "supportedModels": [
       "VR50590"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBIAAABKJQSEhI3EhISNxI3EjcSNxISEjcSEhI3EhISEhISEhISNxI3EjcSNxI3EjcSEhISEhISEhISEhISEhISEjcSNxI3EgAFFwABKEoSAA0F",

@@ -17,7 +17,7 @@
       "KSA-D782"
    ],
    "commandsEncoding":"Base64",
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "minTemperature":25,
    "maxTemperature":31,
    "precision":1,

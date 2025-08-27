@@ -3,7 +3,7 @@
   "supportedModels":[
     "CS-E18FKR"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "minTemperature":18.0,
   "maxTemperature":25.0,

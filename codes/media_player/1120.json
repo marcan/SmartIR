@@ -3,7 +3,7 @@
   "supportedModels":[
     "Unknown"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "off":"JgBYAAABKJITERQ2FDgSNxM3EzYUNhQREzcUEBYQEhIVDxUQExITNxM3EzYUOBI3EzYUNhU1FRAUEBQRFBETExITExESEhM3FAAFGwABKEgUAAxOAAEoSRMADQU==",

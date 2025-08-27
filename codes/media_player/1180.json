@@ -1,7 +1,7 @@
 {
     "manufacturer": "TCL",
     "supportedModels": [ "55EP640" ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgU0AHh4DzwPPA88DzwPPA8eDzwPPA88Dx4PHg8eDx4PHg8eDx4PHg88Dx4PHg8eDzwPPA88D/ENBQAA==",

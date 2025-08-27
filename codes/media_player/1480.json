@@ -1,7 +1,7 @@
 {
   "manufacturer": "Kanto",
   "supportedModels": ["YU6"],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
     "off": "JgBQAAABIY4UERQQFBEUERMQFBEUERMRFDUUMxQ1FDQUNBQ1FDQUNBQRFBEUMxQ1FDQUERMRFBEUNBQ0FBEUEBQRFDQTNRQ0FAAE/AABI0UUAA0F",

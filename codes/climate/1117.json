@@ -3,7 +3,7 @@
     "supportedModels": [
         "DTXF35TVMA"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "minTemperature": 10.0,
     "maxTemperature": 32.0,

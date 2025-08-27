@@ -3,7 +3,7 @@
     "supportedModels": [
       "VOLTAS INV/AC 1.5T 183V MZJ3 3S"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "minTemperature": 16,
     "maxTemperature": 30,

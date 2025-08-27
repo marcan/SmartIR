@@ -3,7 +3,7 @@
   "supportedModels":[
     "ADI-2 DAC FS"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "off":"JgCIAAABKZUSExU2EhMSExI4ExMSExITEhQSExM3EhQSOBI4FBISExITExISFBITExISORITEhMSORI4EjgUNxM3FBIRORI4EgAFjQABKkoSAAxfAAEpSxMADF4AASlKEgAMYAABKkkTAAxfAAEqSRMADF8AASlLEgAMYAABKkkTAAxfAAEpSxIADQU",

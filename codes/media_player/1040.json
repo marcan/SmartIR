@@ -3,7 +3,7 @@
     "supportedModels": [
       "22MT47DC"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBoAAABKZUSExEUETgSExITEhMSExEUEjgROREUETkRORE5ETkSNxMSExISExM3EhMSExITERQSOBE5ETkRFBI4EjgSOBE4EgAFLQABKUsRAAxkAAEnTBIADGMAASlLEgAMYwABKEwSAA0F",

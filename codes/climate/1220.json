@@ -3,7 +3,7 @@
   "supportedModels": [
     "Unknown"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 62.0,
   "maxTemperature": 86.0,

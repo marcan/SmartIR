@@ -3,7 +3,7 @@
     "supportedModels": [
       "J-103BF"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
 		"on": "JgBIAAABJpQTEhAVEhMTEhAVEhMRFBAVEjgQOhI4EjgQFRI4EDkTOBI4EBUSOBAVEjgSExI4EBUSEhM4EhITOBISEzgSEhM4EgANBQ==",

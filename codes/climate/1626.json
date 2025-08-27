@@ -3,7 +3,7 @@
   "supportedModels": [
     "MASTER-35 X 1PH"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16.0,
   "maxTemperature": 30.0,

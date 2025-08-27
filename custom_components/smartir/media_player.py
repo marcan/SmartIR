@@ -25,6 +25,7 @@ DEFAULT_DELAY = 0.5
 
 CONF_UNIQUE_ID = 'unique_id'
 CONF_CONTROLLER_DATA = "controller_data"
+CONF_CONTROLLER_TYPE = "controller_type"
 CONF_DELAY = "delay"
 CONF_POWER_SENSOR = 'power_sensor'
 CONF_SOURCE_NAMES = 'source_names'
@@ -34,6 +35,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Optional(CONF_UNIQUE_ID): cv.string,
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
     vol.Required(CONF_DEVICE_CODE): cv.positive_int,
+    vol.Optional(CONF_CONTROLLER_TYPE): cv.string,
     vol.Required(CONF_CONTROLLER_DATA): cv.string,
     vol.Optional(CONF_DELAY, default=DEFAULT_DELAY): cv.string,
     vol.Optional(CONF_POWER_SENSOR): cv.entity_id,
@@ -63,9 +65,11 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
 
         self._manufacturer = device_data['manufacturer']
         self._supported_models = device_data['supportedModels']
-        self._supported_controller = device_data['supportedController']
+        self._default_controller = device_data.get('defaultController', None)
         self._commands_encoding = device_data['commandsEncoding']
         self._commands = device_data['commands']
+
+        self._controller_type = config.get(CONF_CONTROLLER_TYPE, self._default_controller)
 
         self._state = STATE_OFF
         self._sources_list = []
@@ -113,7 +117,7 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
         #Init the IR/RF controller
         self._controller = get_controller(
             self.hass,
-            self._supported_controller, 
+            self._controller_type,
             self._commands_encoding,
             self._controller_data,
             self._delay)
@@ -182,7 +186,7 @@ class SmartIRMediaPlayer(MediaPlayerEntity, RestoreEntity):
             'device_code': self._device_code,
             'manufacturer': self._manufacturer,
             'supported_models': self._supported_models,
-            'supported_controller': self._supported_controller,
+            'default_controller': self._default_controller,
             'commands_encoding': self._commands_encoding,
         }
 

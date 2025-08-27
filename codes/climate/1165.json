@@ -4,7 +4,7 @@
     "42P250HX",
     "53P250HX"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17,
   "maxTemperature": 32,

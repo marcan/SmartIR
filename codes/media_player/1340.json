@@ -3,7 +3,7 @@
     "supportedModels": [
       "Aldi"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgCQAAABKZMTNhQSFBESFBMSExISExMTExITNxMSExISOBQ3EzcRFBQSEzcTNxM3EzcSFBEUExISOBQSExITEhMSEzcUNxE5EwAHuAABKZMTNxMSFBEUEhEUExITEhIUExIUNhMSExIVNhM3EzcUERQSEzcTNxM3FDYUEhMSExIUNhQSFBETEhMSFDYVNhQ2FAANBQAAAAAAAAAA", 

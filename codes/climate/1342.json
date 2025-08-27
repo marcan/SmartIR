@@ -4,7 +4,7 @@
     "Tadiran-10i/15i/inv220a"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 16,
   "maxTemperature": 30,
   "precision": 1,

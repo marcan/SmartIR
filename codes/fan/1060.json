@@ -3,7 +3,7 @@
   "supportedModels": [
     "Super Fan A1"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "speed": [
     "low",

@@ -4,7 +4,7 @@
     "AFC-100T"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 17,
   "maxTemperature": 30,
   "precision": 1,

@@ -3,7 +3,7 @@
     "supportedModels": [
       "FTXS60FVMA"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "minTemperature": 18.0,
     "maxTemperature": 24.0,

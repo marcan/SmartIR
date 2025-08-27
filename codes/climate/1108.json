@@ -6,7 +6,7 @@
         "FTXG35EV1BW"
     ],
     "commandsEncoding": "Base64",
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "minTemperature": 18,
     "maxTemperature": 32,
     "precision": 1,

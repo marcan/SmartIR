@@ -3,7 +3,7 @@
     "supportedModels":[
       "DXK18Z1-S"
     ],
-    "supportedController":"Xiaomi",
+    "defaultController":"Xiaomi",
     "commandsEncoding": "Xiaomi",
     "minTemperature":18.0,
     "maxTemperature":30.0,

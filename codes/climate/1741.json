@@ -12,7 +12,7 @@
     "KSV80HRC"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 16,
   "maxTemperature": 30,
   "precision": 1,

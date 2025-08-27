@@ -4,7 +4,7 @@
     "BRC4C158"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 16,
   "maxTemperature": 32,
   "precision": 1,

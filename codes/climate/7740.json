@@ -3,7 +3,7 @@
   "supportedModels": [
     "KSV25HWH"
   ],
-  "supportedController": "ESPHome",
+  "defaultController": "ESPHome",
   "commandsEncoding": "Raw",
   "minTemperature": 17.0,
   "maxTemperature": 30.0,

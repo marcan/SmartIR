@@ -3,7 +3,7 @@
   "supportedModels":[
     "MEO"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "0":"JgBIAAABJpMTEhMSEhMTExITExITEhIUEzYTNxI4EhMTNxI4EzcSOBITEhQSExMSExITEhMTEhMSOBI4EjgSNxM3EzcSOBM3EgANBQAAAAAAAAAAAAAAAAAA",

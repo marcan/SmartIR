@@ -4,7 +4,7 @@
     "WT018GLFI19HLD"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 61,
   "maxTemperature": 88,
   "precision": 1,

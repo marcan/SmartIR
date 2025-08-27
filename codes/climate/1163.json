@@ -570,7 +570,7 @@
     "fan_only"
   ],
   "precision": 1,
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "supportedModels": [
     "40MAQB12B--3",
     "40MAQB18B--3"

@@ -6,7 +6,7 @@
     "FTXS60BVMB",
     "FVXS25BVMB"
   ],
-  "supportedController": "Xiaomi",
+  "defaultController": "Xiaomi",
   "commandsEncoding": "Xiaomi",
   "minTemperature": 18.0,
   "maxTemperature": 30.0,

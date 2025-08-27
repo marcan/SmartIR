@@ -8,7 +8,7 @@
       "ARC-148MS"
    ],
    "commandsEncoding":"Base64",
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "minTemperature":62,
    "maxTemperature":88,
    "precision":2,

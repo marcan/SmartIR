@@ -3,7 +3,7 @@
   "supportedModels":[
     "TXV-2420"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "off":"JgCQAB4cOxweHR4cHhweOTwcHjkeHDwcHgALpx4dOxweHR4cHhweOTsdHjgfHDsdHgALpx4dOxweHR4cHhweOTsdHjkeHDsdHgALpx4cPBweHB4dHhweOTscHjkeHTscHgALqB4cOx0eHB4cHhwfODwcHjkeHDwcHgALpx4dOxweHB8cHhweOTscHjkeHTscHgANBQAAAAAAAA==",

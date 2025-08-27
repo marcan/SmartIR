@@ -3,7 +3,7 @@
     "supportedModels": [
       "AHD08LXW1"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "minTemperature": 61.0,
     "maxTemperature": 86.0,

@@ -3,7 +3,7 @@
   "supportedModels":[
     "Electra"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "minTemperature":22.0,
   "maxTemperature":27.0,

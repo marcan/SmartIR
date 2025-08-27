@@ -4,7 +4,7 @@
         "FTE09NV25"
     ],
     "commandsEncoding": "Base64",
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "minTemperature": 20,
     "maxTemperature": 30,
     "precision": 1,

@@ -4,7 +4,7 @@
     "SkyQ black",
     "SkyQ mini"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "off":"JgA+AFYeDBEMEQwfDR8dDwwQDREMEA0QDREMEQwQHR0NEA0QDREMEAwSHA8LIRwdDBEMEQwRDBEdDwsgDBEMAA0FAAAAAAAAAAAAAA==",

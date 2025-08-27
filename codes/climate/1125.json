@@ -5,7 +5,7 @@
     "MLZ-KP35VF",
     "MLZ-KP50VF"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16.0,
   "maxTemperature": 31.0,

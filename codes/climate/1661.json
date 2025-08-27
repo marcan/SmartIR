@@ -3,7 +3,7 @@
    "supportedModels":[
       "RC-G25HN"
    ],
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "commandsEncoding":"Base64",
    "minTemperature":16,
    "maxTemperature":31,

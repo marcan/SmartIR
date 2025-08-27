@@ -6,7 +6,7 @@
 	"RKS502A502",
 	"RKS502A503"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 18,
   "maxTemperature": 30,

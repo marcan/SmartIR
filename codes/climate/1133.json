@@ -7,7 +7,7 @@
     "MSXY-FN18VE"
   ],
   "commandsEncoding":"Base64",
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "minTemperature":16,
   "maxTemperature":31,
   "precision":1,

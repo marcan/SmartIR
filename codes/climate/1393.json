@@ -4,7 +4,7 @@
     "MPPHB-09CRN7-QB6-N"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 17,
   "maxTemperature": 30,
   "precision": 1,

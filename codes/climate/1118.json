@@ -8,7 +8,7 @@
     "FTXS18LVJU",
     "FTXS24LVJU"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 20.0,
   "maxTemperature": 26.0,

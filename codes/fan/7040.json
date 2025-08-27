@@ -3,7 +3,7 @@
     "supportedModels": [
       "Aria"
     ],
-    "supportedController": "ESPHome",
+    "defaultController": "ESPHome",
     "commandsEncoding": "Raw",
     "speed": [
       "low",

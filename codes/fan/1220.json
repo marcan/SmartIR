@@ -3,7 +3,7 @@
    "supportedModels":[
       "C56-RW5"
    ],
-   "supportedController":"Broadlink",
+   "defaultController":"Broadlink",
    "commandsEncoding":"Base64",
    "speed":[
       "1",

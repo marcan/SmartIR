@@ -3,7 +3,7 @@
     "supportedModels": [
       "47PFG4109/77"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgAsAFUdDxsODg8NDh0cDg4PDg0PDg4NDw4PDg4NDw4ODQ8ODw0cDg8bDw4OAA0F",

@@ -1,7 +1,7 @@
 {
   "manufacturer": "Gree",
   "supportedModels": ["GMV-R45G/NaB-K"],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16.0,
   "maxTemperature": 30.0,

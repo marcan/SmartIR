@@ -3,7 +3,7 @@
   "supportedModels": [
     "HTWS035IX21D2-R32-I"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17.0,
   "maxTemperature": 30.0,

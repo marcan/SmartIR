@@ -1,7 +1,7 @@
 {
     "manufacturer": "JVC",
     "supportedModels": ["RX-5022R"],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBMAAABGYoPNBEzEREQExARETMREREzETMRMxA0ERERMxATEREREBAAAp8RMxEzEREQEw8SETMREREzETMSMhEzERERMxESEREREhEADQUAAAAAAAAAAAAAAAA=",

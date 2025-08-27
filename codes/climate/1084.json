@@ -4,7 +4,7 @@
     "RAS-DX18HDK",
     "RAK-35RPC"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16,
   "maxTemperature": 32,

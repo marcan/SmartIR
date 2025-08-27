@@ -3,7 +3,7 @@
   "supportedModels": [
     "A25-TX001-R1"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "speed": [
     "low",

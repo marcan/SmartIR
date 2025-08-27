@@ -4,7 +4,7 @@
       "A016-09KR2/A"
     ],
     "commandsEncoding": "Base64",
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "minTemperature": 16,
     "maxTemperature": 31,
     "precision": 1,

@@ -3,7 +3,7 @@
   "supportedModels": [
     "KFR-35G/F3C1"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16.0,
   "maxTemperature": 31.0,

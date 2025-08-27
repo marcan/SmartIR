@@ -3,7 +3,7 @@
   "supportedModels": [
     "AR**TSHQBURN"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 17,
   "maxTemperature": 30,

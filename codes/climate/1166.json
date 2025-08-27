@@ -4,7 +4,7 @@
     "CS-A121N"
   ],
   "commandsEncoding":"Base64",
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "minTemperature":17,
   "maxTemperature":32,
   "precision":1,

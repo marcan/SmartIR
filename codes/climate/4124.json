@@ -8,7 +8,7 @@
       "MSZ-AP20VG",
       "MSZ-AP25VGD"
     ],
-    "supportedController":"Xiaomi",
+    "defaultController":"Xiaomi",
     "commandsEncoding":"Xiaomi",
     "minTemperature":18.0,
     "maxTemperature":30.0,

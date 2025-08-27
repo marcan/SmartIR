@@ -3,7 +3,7 @@
   "supportedModels": [
     "Whitehaven DC"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "speed": [
    	"1",

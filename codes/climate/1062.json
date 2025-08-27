@@ -5,7 +5,7 @@
 		"A06AWV"
     ],
     "commandsEncoding": "Base64",
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "minTemperature": 18.0,
     "maxTemperature": 30.0,
     "precision": 1.0,

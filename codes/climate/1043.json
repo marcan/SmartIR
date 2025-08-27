@@ -3,7 +3,7 @@
     "supportedModels": [
       "ASWX09LECA"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "minTemperature": 18.0,
     "maxTemperature": 30.0,

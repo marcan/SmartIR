@@ -4,7 +4,7 @@
       "42PFL3007H/60",
       "37PF9641D/10"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgAaAB0dOx4cHhweHR4cHhw8HR0dHhweOzsdAA0FAAAAAAAAAAAAAAAAAAA=",

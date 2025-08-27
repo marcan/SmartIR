@@ -3,7 +3,7 @@
     "supportedModels": [
       "V19B-LED4"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
             "off": "JgAwAB4cOhwdHR4bHR0dOTocHTkdHTscHQAK+x0dOhwdHR0cHR0dOTsbHTkeHDocHgANBQAAAAAAAAAA",

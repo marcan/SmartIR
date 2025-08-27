@@ -4,7 +4,7 @@
     "KDL46EX620",
     "RM-YD063"
   ],
-  "supportedController": "ESPHome",
+  "defaultController": "ESPHome",
   "commandsEncoding": "Raw",
   "commands": {
     "power": "[2400, -600, 1200, -600, 600, -600, 1200, -600, 600, -600, 1200, -600, 600, -600, 600, -600, 1200, -600, 600, -600, 600, -600, 600, -600, 600, -600]",

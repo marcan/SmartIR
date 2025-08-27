@@ -4,7 +4,7 @@
     "MSZ-AP50VGKD"
   ],
   "commandsEncoding": "Base64",
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "minTemperature": 10,
   "maxTemperature": 31,
   "precision": 1,

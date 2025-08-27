@@ -4,7 +4,7 @@
   "supportedModels": [
     "ZACS/I-07 HPF/A17/N1"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16.0,
   "maxTemperature": 30.0,

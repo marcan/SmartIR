@@ -4,7 +4,7 @@
       "43UM7510PSB",
       "OLED55B8SSC"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgBQAAABKZQRFBETEjgSExEUERMSExITEjgROBITEjgROBI4ETgSOBEUERMSExI4EhMRFBETEhMSOBE4EjgRFBE4EjgROBI4EQAFLQABKEsRAA0FAAAAAAAAAAA=",

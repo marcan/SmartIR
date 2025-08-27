@@ -6,7 +6,7 @@
     "FTC25NV14",
     "FTC35NV14"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 18.0,
   "maxTemperature": 32.0,

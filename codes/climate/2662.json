@@ -4,7 +4,7 @@
 		"H-ARI22-09H"
 	],
 	"commandsEncoding": "Base64",
-	"supportedController": "Broadlink",
+	"defaultController": "Broadlink",
 	"minTemperature": 16,
 	"maxTemperature": 32,
 	"precision": 1,

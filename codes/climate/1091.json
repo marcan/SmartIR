@@ -6,7 +6,7 @@
     "HSPE5400FCINV",
     "HSPE6400FCINV"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16,
   "maxTemperature": 30,

@@ -3,7 +3,7 @@
     "supportedModels": [
       "MiBox","MItv"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgA0ACMRFhEWLRYtFhEWLRYRFi0WERUuFi0WAAFTIhEWERYtFi0WERYtFhEVLhYRFS4VLhYADQUAAAAA",

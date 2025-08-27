@@ -3,7 +3,7 @@
     "supportedModels": [
         "TLR-002"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "brightness": [
         16,

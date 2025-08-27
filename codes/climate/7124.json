@@ -8,7 +8,7 @@
     "MSZ-AP20VG",
     "MSZ-AP25VGD"
   ],
-  "supportedController": "ESPHome",
+  "defaultController": "ESPHome",
   "commandsEncoding": "Raw",
   "minTemperature": 16,
   "maxTemperature": 31,

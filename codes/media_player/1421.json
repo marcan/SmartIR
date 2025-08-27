@@ -3,7 +3,7 @@
   "supportedModels":[
     "jblbar20aioblkep"
   ],
-  "supportedController":"Broadlink",
+  "defaultController":"Broadlink",
   "commandsEncoding":"Base64",
   "commands":{
     "off":"JgBYAAABH5ATEhMREjYRExISExIREhM2ERITEhI1ExISNRM1EjYTERI2ETYTNRI1EzYSNRI1EzYREhMSEhISEhITEhISEhISEwAFPgABH0kSAAv9AAEgSBIADQU=",

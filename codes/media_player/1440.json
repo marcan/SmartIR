@@ -3,7 +3,7 @@
   "supportedModels": [
     "L4223FDC PVR"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "commands": {
     "on": "JgAwABceOx4dHR0eHR0dOzsdHToeHTsdHQALjhweOR8dHR0eHR4dOjsdHTsdHjoeHQANBQAAAAAAAAAA",

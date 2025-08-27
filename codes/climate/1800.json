@@ -3,7 +3,7 @@
   "supportedModels": [
     "YKR-K/002E"
   ],
-  "supportedController": "Broadlink",
+  "defaultController": "Broadlink",
   "commandsEncoding": "Base64",
   "minTemperature": 16,
   "maxTemperature": 32,

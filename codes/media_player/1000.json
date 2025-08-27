@@ -3,7 +3,7 @@
     "supportedModels": [
       "26PFL560H"
     ],
-    "supportedController": "Broadlink",
+    "defaultController": "Broadlink",
     "commandsEncoding": "Base64",
     "commands": {
         "off": "JgAaAB0dOx4cHhweHR4cHhw8HR0dHhweOzsdAA0FAAAAAAAAAAAAAAAAAAA=",

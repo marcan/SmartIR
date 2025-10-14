@@ -58,7 +58,9 @@ def command(hvac_mode, swing_mode, fan_mode, temp):
         "fan_only": 4,
     }[hvac_mode]
 
-    if hvac_mode == "auto":
+    if hvac_mode in ("off", "fan_only"):
+      c_temp = 0
+    elif hvac_mode == "auto":
       c_temp = int(temp) + 7 # standard -> 7
     else:
       c_temp = int(temp) - 17 # 17 -> 0

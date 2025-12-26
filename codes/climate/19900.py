@@ -73,10 +73,13 @@ DEVICE_DATA = {
     "middle",
     "lower",
     "bottom",
+  ],
+  "toggles": [
+    "self_cleaning",
   ]
 }
 
-def command(hvac_mode, swing_mode, fan_mode, temp, cleaning_enabled=False):
+def command(hvac_mode, swing_mode, fan_mode, temp, self_cleaning=False):
     if swing_mode == "nice":
         fan_mode = "auto"
     if hvac_mode == "auto" and fan_mode not in ("auto", "quiet"):

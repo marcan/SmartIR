@@ -39,10 +39,14 @@ DEVICE_DATA = {
     "middle",
     "lower",
     "bottom",
+  ],
+  "toggles": [
+    "self_cleaning",
+    "power_limit",
   ]
 }
 
-def command(hvac_mode, swing_mode, fan_mode, temp, cleaning_enabled=False, power_limit=False):
+def command(hvac_mode, swing_mode, fan_mode, temp, self_cleaning=True, power_limit=False):
     c_fan_mode = {
         "auto":     0,
         "low":      1,
@@ -96,7 +100,7 @@ def command(hvac_mode, swing_mode, fan_mode, temp, cleaning_enabled=False, power
         c_sub_mode,
         (c_beep_count << 6) | c_fan_mode | (c_fan_direction << 3),
         0, 0, 0, 0,
-        0x04 if cleaning_enabled else 0,
+        0x04 if self_cleaning else 0,
         0x10 if fan_mode == "powerful" else 0,
         0
     ]

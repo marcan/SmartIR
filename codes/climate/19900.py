@@ -131,7 +131,7 @@ def command(hvac_mode, swing_mode, fan_mode, temp, cleaning_enabled=False):
             0x80 if hvac_mode == 'off' else 0,
             c_fan_direction << 4,
             0,
-            0x40 if cleaning_enabled else 0,
+            0x40 if self_cleaning else 0,
             0,0,0,0
         ],
         [

@@ -16,7 +16,8 @@ from homeassistant.core import Event, EventStateChangedData, callback
 from homeassistant.helpers.event import async_track_state_change, async_track_state_change_event
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.restore_state import RestoreEntity
-from . import COMPONENT_ABS_DIR, Helper, async_get_device_data, CONF_DEVICE_CODE
+from homeassistant.helpers.discovery import async_load_platform
+from . import COMPONENT_ABS_DIR, Helper, async_get_device_data, CONF_DEVICE_CODE, DOMAIN
 from .controller import get_controller
 
 _LOGGER = logging.getLogger(__name__)
@@ -59,9 +60,16 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     if device_data is None:
         return
 
-    async_add_entities([SmartIRClimate(
+    entity = SmartIRClimate(
         hass, config, device_data
-    )])
+    )
+    async_add_entities([entity])
+
+    for i in entity._toggle_state:
+        await async_load_platform(hass, 'switch', DOMAIN, {
+            "climate": entity,
+            "toggle": i
+        }, config)
 
 class SmartIRClimate(ClimateEntity, RestoreEntity):
     def __init__(self, hass, config, device_data):
@@ -132,7 +140,11 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
             self._commands_encoding,
             self._controller_data,
             self._delay)
-            
+
+        self._toggle_state = {}
+        for toggle in device_data.get('toggles', []):
+            self._toggle_state[toggle] = False
+
     async def async_added_to_hass(self):
         """Run when entity about to be added."""
         await super().async_added_to_hass()
@@ -150,6 +162,10 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                 self._last_on_operation = last_state.attributes['last_on_operation']
             if self._per_mode_range and 'target_temperatures' in last_state.attributes:
                 self._target_temperatures = last_state.attributes['target_temperatures']
+
+            for i in self._toggle_state:
+                if i in last_state.attributes:
+                    self._toggle_state[i] = last_state.attributes[i]
 
         if self._temperature_sensor:
             async_track_state_change_event(self.hass, self._temperature_sensor, 
@@ -291,6 +307,8 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         }
         if self._per_mode_range:
             state['target_temperatures'] = self._target_temperatures
+        for i in self._toggle_state:
+            state[i] = self._toggle_state[i]
 
         return state
 
@@ -388,7 +406,17 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
                 target_temperature = self._target_temperature
 
                 if self._code_module:
-                    code = self._code_module.command(operation_mode, swing_mode, fan_mode, target_temperature)
+                    args = {
+                        "hvac_mode": operation_mode,
+                        "fan_mode": fan_mode,
+                        "temp": target_temperature,
+                    }
+
+                    if self._support_swing:
+                        args["swing_mode"] = swing_mode
+
+                    args.update(self._toggle_state)
+                    code = self._code_module.command(**args)
                     await self._controller.send(code)
                 else:
                     target_temperature = '{0:g}'.format(target_temperature)

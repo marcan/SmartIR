@@ -39,7 +39,7 @@ DEVICE_DATA = {
   ],
 }
 
-def command(hvac_mode, swing_mode, fan_mode, temp):
+def command(hvac_mode, fan_mode, temp):
     c_fan_mode = {
         "auto": 0x00,
         "mild": 0x00,

@@ -71,6 +71,12 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
             "toggle": i
         }, config)
 
+    for i in entity._actions:
+        await async_load_platform(hass, 'button', DOMAIN, {
+            "climate": entity,
+            "action": i
+        }, config)
+
 class SmartIRClimate(ClimateEntity, RestoreEntity):
     def __init__(self, hass, config, device_data):
         _LOGGER.debug(f"SmartIRClimate init started for device {config.get(CONF_NAME)} supported models {device_data['supportedModels']}")
@@ -141,6 +147,9 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
             self._commands_encoding,
             self._controller_data,
             self._delay)
+
+
+        self._actions = device_data.get('actions', [])
 
         self._toggle_state = {}
         for toggle in device_data.get('toggles', []):
@@ -397,7 +406,7 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         else:
             await self.async_set_hvac_mode(self._operation_modes[1])
 
-    async def send_command(self):
+    async def send_command(self, action=None):
         async with self._temp_lock:
             try:
                 self._on_by_remote = False
@@ -415,6 +424,9 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
 
                     if self._support_swing:
                         args["swing_mode"] = swing_mode
+
+                    if action is not None:
+                        args["action"] = action
 
                     args.update(self._toggle_state)
                     code = self._code_module.command(**args)

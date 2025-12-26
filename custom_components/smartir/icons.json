@@ -1,0 +1,30 @@
+{
+  "entity": {
+    "climate": {
+      "smartir_climate": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "powerful": "mdi:weather-windy",
+              "mild": "mdi:emoticon-happy",
+              "quiet": "mdi:power-sleep",
+              "low_medium": "mdi:numeric-2",
+              "medium_high": "mdi:numeric-4"
+            }
+          },
+          "swing_mode": {
+            "state": {
+              "auto": "mdi:auto-mode",
+              "nice": "mdi:emoticon-happy",
+              "top": "mdi:arrow-right-top",
+              "upper": "mdi:arrow-top-right",
+              "middle": "mdi:arrow-right",
+              "lower": "mdi:arrow-bottom-right",
+              "bottom": "mdi:arrow-right-bottom"
+            }
+          }
+        }
+      }
+    }
+  }
+}

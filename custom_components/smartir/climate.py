@@ -84,6 +84,7 @@ class SmartIRClimate(ClimateEntity, RestoreEntity):
         self._humidity_sensor = config.get(CONF_HUMIDITY_SENSOR)
         self._power_sensor = config.get(CONF_POWER_SENSOR)
         self._power_sensor_restore_state = config.get(CONF_POWER_SENSOR_RESTORE_STATE)
+        self._attr_translation_key = "smartir_climate"
 
         self._manufacturer = device_data['manufacturer']
         self._supported_models = device_data['supportedModels']
